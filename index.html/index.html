@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Profile Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <article data-testid="test-profile-card" class="profile-card">
+    
+    <figure class="profile-avatar-container">
+      <img 
+        src="IMG_9600.jpeg?auto=format&fit=crop&w=150&q=80" alt="A picture of me"
+        alt="Profile picture of Churchill Akpe" 
+        data-testid="test-user-avatar" 
+        class="profile-avatar"
+      />
+    </figure>
+
+    <div class="profile-content">
+      <header>
+        <h2 data-testid="test-user-name" class="profile-name">Churchill Akpe</h2>
+      </header>
+
+      <p data-testid="test-user-bio" class="profile-bio">
+        Min-maxing the frontend for ultimate accessibility and zero-lag performance. 🎮 Building responsive web apps that feel like a 'Critical Hit' on every device.
+      </p>
+
+      <div class="time-container" aria-live="polite" aria-atomic="true">
+        <strong>Current Time (WAT):</strong> 
+        <span data-testid="test-user-time" class="time-value"></span>
+      </div>
+
+      <nav aria-label="Social Links" class="social-nav">
+        <ul data-testid="test-user-social-links" class="social-links">
+          <li>
+            <a href="https://github.com/churchill121" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a>
+          </li>
+          <li>
+            <a href="https://x.com/churchi20569484?s=21" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/churchill-akpe-9a9845403?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="lists-container">
+        <section aria-labelledby="hobbies-title">
+          <h3 id="hobbies-title">Hobbies</h3>
+          <ul data-testid="test-user-hobbies" class="tags-list">
+            <li>Open Source Coding</li>
+            <li>Music</li>
+            <li>Reading Sci-Fi</li>
+            <li>Traveling</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="dislikes-title">
+          <h3 id="dislikes-title">Dislikes</h3>
+          <ul data-testid="test-user-dislikes" class="tags-list">
+            <li>Unsemantic HTML</li>
+            <li>Traffic Jams</li>
+            <li>Loud noise</li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>

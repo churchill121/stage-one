@@ -1,0 +1,167 @@
+/* Custom Properties for WCAG AA compliance and easy theming */
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-primary: #1a202c; /* WCAG AA compliant on white */
+  --text-secondary: #4a5568; /* WCAG AA compliant on white */
+  --link-color: #3182ce;
+  --focus-outline: #e53e3e;
+  --tag-bg: #edf2f7;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Card Container: Mobile-first Stack */
+.profile-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Tablet & Desktop Layout: Side-by-side */
+@media (min-width: 640px) {
+  .profile-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Avatar Styling */
+.profile-avatar-container {
+  margin: 0;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--tag-bg);
+}
+
+/* Content Layout */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.profile-bio {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Real-time Component */
+.time-container {
+  background-color: var(--tag-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.time-value {
+  font-weight: bold;
+  color: var(--link-color);
+}
+
+/* Social Links Navigation */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.2s ease;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Accessibility: Strict Focus States */
+a:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Lists Container (Hobbies & Dislikes) */
+.lists-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+section {
+  flex: 1;
+  min-width: 200px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--tag-bg);
+  padding-bottom: 0.5rem;
+}
+
+.tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tags-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.tags-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--link-color);
+  font-weight: bold;
+}
