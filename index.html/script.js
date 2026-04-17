@@ -1,14 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const timeElement = document.querySelector('[data-testid="test-user-time"]');
 
-  // Function to update the time in minutes and seconds format
+  // Function to update the time in milliseconds
   function updateTime() {
     if (timeElement) {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      timeElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      timeElement.textContent = Date.now();
     }
   }
 
